@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Sign in to Technify ERP</h1>
+    <div id="login-error" class="msg error hidden"></div>
+
+    <label>Email or Username
+      <input type="text" id="login-id" placeholder="your.email@university.edu">
+    </label>
+
+    <label>Password
+      <div class="pw-wrap">
+        <input type="password" id="login-pw" placeholder="••••••••">
+        <button type="button" class="eye-btn" onclick="togglePw('login-pw',this)">👁</button>
+      </div>
+    </label>
+
+    <label class="row"><input type="checkbox" id="remember"> Remember me</label>
+
+    <button id="login-btn" class="btn-primary" onclick="handleLogin()">Sign In</button>
+    <div id="countdown" class="msg hidden"></div>
+
+    <div class="links">
+      <a href="forgot.html">Forgot password?</a>
+      <a href="register.html">Don't have an account? Register</a>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Create Account</h1>
+    <div id="reg-success" class="msg hidden"></div>
+
+    <label>Full Name
+      <input type="text" id="reg-name" placeholder="Jane Doe" oninput="validateReg()">
+    </label>
+    <label>Email
+      <input type="email" id="reg-email" placeholder="jane@university.edu" oninput="validateReg()">
+    </label>
+    <label>Username
+      <input type="text" id="reg-username" placeholder="jane_doe" oninput="validateReg()">
+    </label>
+    <label>Password
+      <div class="pw-wrap">
+        <input type="password" id="reg-pw" placeholder="••••••••" oninput="validateReg()">
+        <button type="button" class="eye-btn" onclick="togglePw('reg-pw',this)">👁</button>
+      </div>
+      <div id="pw-strength" class="strength-bar"></div>
+    </label>
+    <label>Confirm Password
+      <input type="password" id="reg-confirm" placeholder="••••••••" oninput="validateReg()">
+    </label>
+    <label>Role
+      <select id="reg-role">
+        <option value="">Select role</option>
+        <option value="Student">Student</option>
+        <option value="Teacher">Teacher</option>
+        <option value="Admin">Admin</option>
+      </select>
+    </label>
+
+    <button id="reg-btn" class="btn-primary" disabled onclick="handleRegister()">Create Account</button>
+    <div class="links">
+      <a href="login.html">Already have an account? Sign in</a>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

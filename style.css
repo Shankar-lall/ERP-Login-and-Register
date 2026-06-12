@@ -1,0 +1,93 @@
+*, *::before, *::after
+ { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef0f5;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  padding: 16px;
+}
+
+.card {
+  background: #fff;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  padding: 36px 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.10);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+h1 { font-size: 22px; font-weight: 700; color: #1a1d23; }
+.subtitle { font-size: 14px; color: #6b7280; margin-top: -8px; }
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+input[type="text"], input[type="email"],
+input[type="password"], select {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #f9fafb;
+  outline: none;
+  transition: border-color .2s;
+}
+input:focus, select:focus { border-color: #3b82f6; background: #fff; }
+
+.pw-wrap { position: relative; }
+.pw-wrap input { padding-right: 42px; }
+.eye-btn {
+  position: absolute; right: 10px; top: 50%;
+  transform: translateY(-50%);
+  background: none; border: none; cursor: pointer; font-size: 16px;
+}
+
+label.row { flex-direction: row; align-items: center; gap: 8px; font-weight: 400; }
+label.row input { width: auto; height: auto; }
+
+.strength-bar { height: 4px; border-radius: 4px; margin-top: 4px; width: 0; transition: all .3s; }
+.strength-bar.weak   { width: 33%; background: #ef4444; }
+.strength-bar.medium { width: 66%; background: #f97316; }
+.strength-bar.strong { width: 100%; background: #22c55e; }
+
+.btn-primary {
+  width: 100%; height: 46px;
+  background: #3b82f6; color: #fff;
+  border: none; border-radius: 8px;
+  font-size: 15px; font-weight: 600;
+  cursor: pointer; transition: background .2s, opacity .2s;
+  margin-top: 4px;
+}
+.btn-primary:hover:not(:disabled) { background: #2563eb; }
+.btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+
+.msg { padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 500; }
+.msg.error   { background: #fee2e2; color: #b91c1c; }
+.msg.success { background: #dcfce7; color: #15803d; }
+.msg.info    { background: #dbeafe; color: #1d4ed8; }
+.hidden { display: none; }
+
+.links { display: flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 4px; }
+.links a { font-size: 13px; color: #3b82f6; text-decoration: none; }
+.links a:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+  .card { padding: 28px 16px; }
+  input[type="text"], input[type="email"],
+  input[type="password"], select { height: 48px; }
+}
